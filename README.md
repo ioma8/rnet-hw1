@@ -1,2 +1,7 @@
 # rnet-hw1
-Homework 1 for Raynet
+
+## Start localy:
+npm install
+npm run serve
+
+open browser at localhost:8080
