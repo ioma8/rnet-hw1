@@ -2,13 +2,17 @@
   <tbody>
     <tr class="company-line" :class="{ selected: selected == true }">
       <td class="company-name">{{ row.name }}</td>
-      <td>{{ row.state }}</td>
-      <td>{{ row.role }}</td>
+      <td>{{ rayState[row.state] }}</td>
+      <td>{{ rayRole[row.role] }}</td>
       <td>{{ row.rating }}</td>
       <td>{{ row.owner.fullName }}</td>
       <td>{{ row.regNumber }}</td>
       <td>{{ row.contactAddress.address.city }}</td>
-      <td>{{ row.category }}</td>
+      <td>
+        <span v-if="row.category" class="badge bg-secondary">{{
+          row.category.value
+        }}</span>
+      </td>
     </tr>
     <tr class="spacer-line">
       <td colspan="8">&nbsp;</td>
@@ -17,9 +21,17 @@
 </template>
 
 <script>
+import { rayRole, rayState } from "@/composables/rayEnum";
+
 export default {
   name: "CompanyLine",
   props: ["row", "selected"],
+  setup() {
+    return {
+      rayRole,
+      rayState,
+    };
+  },
 };
 </script>
 

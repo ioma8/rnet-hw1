@@ -20,19 +20,19 @@ export default {
 </script>
 
 <style>
-@import "../node_modules/typeface-roboto/index.css";
+@import "./assets/roboto.css";
 
 body {
   font-family: "Roboto", sans-serif !important;
   background-color: #f2f4f6 !important;
-  color: #7d8698!important;
-  font-size: 14px!important;
+  color: #7d8698 !important;
+  font-size: 14px !important;
 }
 </style>
 
 <style scoped>
 .container-fluid {
-  padding-left: 120px!important;
+  padding-left: 120px !important;
   max-width: 2000px;
   margin-left: 0;
 }

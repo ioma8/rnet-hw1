@@ -9,7 +9,7 @@
         :selected="selectedCompanyId"
         @onSelected="onSelected"
       />
-      <CompanyDetail class="ms-3" />
+      <CompanyDetail class="ms-3" :company-id="selectedCompanyId" />
     </div>
   </div>
 </template>
@@ -36,6 +36,7 @@ export default {
     let rows = ref([]);
     let selectedCompanyId = ref(-1);
     let fulltext = ref("");
+    let selectedCompanyData = ref({});
 
     const reloadData = () => {
       selectedCompanyId.value = -1;
@@ -49,6 +50,8 @@ export default {
         if (response.data.success) {
           rows.value = response.data.data;
         }
+      }).catch(error=>{
+        console.error(error);
       });
     };
 
@@ -58,8 +61,8 @@ export default {
 
     const onSearch = (text) => {
       fulltext.value = text.trim();
+      selectedCompanyId.value = -1;
       reloadData();
-      console.error(text);
     };
 
     reloadData();
@@ -70,6 +73,7 @@ export default {
       onSelected,
       fulltext,
       onSearch,
+      selectedCompanyData,
     };
   },
 };

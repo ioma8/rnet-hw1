@@ -32,7 +32,7 @@ export default {
   },
   props: ["rows", "selected"],
   // eslint-disable-next-line no-unused-vars
-  setup(props, {emit}) {
+  setup(props, { emit }) {
     const selectCompany = (companyId) => {
       emit("onSelected", companyId);
     };

@@ -1,4 +1,5 @@
 import axios from "axios"
+import { apiUser, apiKey, apiInstance } from "@/rayConfig"
 
 
 let apiCall = (endpoint = "company", params = {}) => {
@@ -7,15 +8,13 @@ let apiCall = (endpoint = "company", params = {}) => {
         url: 'https://app.raynet.cz/api/v2/' + endpoint + '/',
         params: params,
         auth: {
-            username: "kolcarjakub@gmail.com",
-            password: "crm-77d91f29774c452696513de28e63ea7c",
+            username: apiUser,
+            password: apiKey,
         },
         headers: {
-            "X-Instance-Name": "rnethw1"
+            "X-Instance-Name": apiInstance
         }
     });
 }
-
-// TODO: api credentials to separate file which is not in GIT
 
 export default apiCall
