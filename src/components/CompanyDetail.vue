@@ -15,7 +15,7 @@
           <div v-if="companyData.primaryAddress.address.street">
             {{ companyData.primaryAddress.address.street }}
           </div>
-          <div v-if="companyData.primaryAddress.address.zipCod">
+          <div v-if="companyData.primaryAddress.address.zipCode">
             {{ companyData.primaryAddress.address.zipCode }}
           </div>
           <div v-if="companyData.primaryAddress.city">
