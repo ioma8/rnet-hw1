@@ -1,11 +1,11 @@
 import axios from "axios"
-import { apiUser, apiKey, apiInstance } from "@/rayConfig"
+import { apiUser, apiKey, apiInstance, host } from "@/rayConfig"
 
 
 let apiCall = (endpoint = "company", params = {}) => {
     return axios({
         method: 'get',
-        url: 'https://app.raynet.cz/api/v2/' + endpoint + '/',
+        url: host + endpoint + '/',
         params: params,
         auth: {
             username: apiUser,

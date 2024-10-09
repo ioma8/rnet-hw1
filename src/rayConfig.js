@@ -1,5 +1,6 @@
-const apiUser = "kolcarjakub@gmail.com";
-const apiKey = "crm-77d91f29774c452696513de28e63ea7c";
-const apiInstance = "rnethw1";
+const host = process.env.VUE_APP_HOST;
+const apiUser = process.env.VUE_APP_API_USER;
+const apiKey = process.env.VUE_APP_API_KEY;
+const apiInstance = process.env.VUE_APP_API_INSTANCE;
 
-export { apiUser, apiKey, apiInstance }
+export { apiUser, apiKey, apiInstance, host }
